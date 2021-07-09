@@ -169,7 +169,7 @@ namespace CodingTest.Test
         public async void Test_Amount_Greater_Than_999999999_Throws_ArgumentOutOfRangeException_Async()
         {
             //Arrange
-            double Amount = 0 - 1;
+            double Amount = 9999999999;
             //Act
             //double result = await _service.CalculatedExpectedChargeAsync(Amount);
 
@@ -180,11 +180,117 @@ namespace CodingTest.Test
         public void Test_Amount_Greater_Than_999999999_Throws_ArgumentOutOfRangeException_Sync()
         {
             //Arrange
-            double Amount = 0 - 1;
+            double Amount = 9999999999;
             //Act
 
             //Assert
             Assert.Throws<ArgumentOutOfRangeException>(() => _service.CalculatedExpectedCharge(Amount));
+        }
+
+        [Fact]
+        public void Test_CalculateSurcharge_Returns_Right_Charge_Tier_1()
+        {
+            //Arrange
+            double Amount = 5000;
+
+            //Act
+            double result = _service.CalculateSurcharge(Amount);
+
+            //Assert
+            Assert.Equal(4990, result);
+
+        }
+
+        [Fact]
+        public void Test_CalculateSurcharge_Returns_Right_Charge_Tier_2()
+        {
+            //Arrange
+            double Amount = 15000;
+
+            //Act
+            double result = _service.CalculateSurcharge(Amount);
+
+            //Assert
+            Assert.Equal(14975, result);
+
+        }
+
+        [Fact]
+        public void Test_CalculateSurcharge_Returns_Right_Charge_Tier_3()
+        {
+            //Arrange
+            double Amount = 150000;
+
+            //Act
+            double result = _service.CalculateSurcharge(Amount);
+
+            //Assert
+            Assert.Equal(149950, result);
+
+        }
+
+        [Fact]
+        public void Test_CalculateSurcharge_Throws_ArgumentOutOfRangeException_When_Amount_Is_Less_Than_1()
+        {
+            //Arrange
+            double Amount = 0 - 1;
+
+            //Act
+
+            //Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() => _service.CalculateSurcharge(Amount));
+        }
+
+        [Fact]
+        public void Test_CalculateSurcharge_Throws_ArgumentOutOfRangeException_When_Amount_Is_Greater_Than_999999999()
+        {
+            //Arrange
+            double Amount = 9999999999; //NB: 10-digits > 9 digits in the config huh?
+
+            //Act
+
+            //Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() => _service.CalculateSurcharge(Amount));
+        }
+
+        [Theory]
+        [InlineData(50030)]
+        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_3(double Amount)
+        {
+            //Arrange
+
+            //Act
+            double result = _service.CalculateSurcharge(Amount);
+
+            //Assert
+            Assert.Equal(49980, result);
+
+        }
+        [Theory]
+        [InlineData(45000)]
+        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_2(double Amount)
+        {
+            //Arrange
+
+            //Act
+            double result = _service.CalculateSurcharge(Amount);
+
+            //Assert
+            Assert.Equal(44975, result);
+
+        }
+        [Theory]
+        [InlineData(5000)]
+        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_1(double Amount)
+        {
+            //Arrange
+
+            //Act
+            double result = _service.CalculateSurcharge(Amount);
+
+            //Assert
+            Assert.Equal(4990, result);
+
         }
 
     }

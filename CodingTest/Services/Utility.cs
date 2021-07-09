@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CodingTest.Services
@@ -23,7 +21,6 @@ namespace CodingTest.Services
                     JObject jObject = JObject.Parse(jsonText);
                     var fees = jObject.SelectToken("fees");
                     output = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<T>(fees.ToString()));
-                    Console.WriteLine("Welcomelasldkad");
                 }
             }
             catch (Exception ex)
@@ -43,17 +40,15 @@ namespace CodingTest.Services
                 using (var sr = new StreamReader(FIlePath))
                 {
                     var jsonText = sr.ReadToEnd();
-                    //output = JsonConvert.DeserializeObject<T>(jsonText);
                     JObject jObject = JObject.Parse(jsonText);
                     var fees = jObject.SelectToken("fees");
                     output = JsonConvert.DeserializeObject<T>(fees.ToString());
-                    Console.WriteLine("Welcomelasldkad");
                 }
             }
             catch (Exception ex)
             {
 
-                Console.WriteLine($"The File Parsing Operation Failed: {ex.ToString()}");
+                Console.WriteLine($"The File Parsing Operation Failed: {ex.Message}");
             }
 
             return output;
