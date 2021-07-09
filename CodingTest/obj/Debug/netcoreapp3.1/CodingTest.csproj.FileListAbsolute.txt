@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\CodingTest\CodingTest\bin\Debug\netcoreapp3.1\CodingTest.exe
+C:\Users\User\source\repos\CodingTest\CodingTest\obj\Debug\netcoreapp3.1\CodingTest.csprojAssemblyReference.cache
+C:\Users\User\source\repos\CodingTest\CodingTest\obj\Debug\netcoreapp3.1\CodingTest.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CodingTest\CodingTest\obj\Debug\netcoreapp3.1\CodingTest.AssemblyInfo.cs
+C:\Users\User\source\repos\CodingTest\CodingTest\bin\Debug\netcoreapp3.1\CodingTest.deps.json
+C:\Users\User\source\repos\CodingTest\CodingTest\bin\Debug\netcoreapp3.1\CodingTest.runtimeconfig.json
+C:\Users\User\source\repos\CodingTest\CodingTest\bin\Debug\netcoreapp3.1\CodingTest.runtimeconfig.dev.json
+C:\Users\User\source\repos\CodingTest\CodingTest\bin\Debug\netcoreapp3.1\CodingTest.dll
+C:\Users\User\source\repos\CodingTest\CodingTest\bin\Debug\netcoreapp3.1\CodingTest.pdb
+C:\Users\User\source\repos\CodingTest\CodingTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\User\source\repos\CodingTest\CodingTest\obj\Debug\netcoreapp3.1\CodingTest.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CodingTest\CodingTest\obj\Debug\netcoreapp3.1\CodingTest.csproj.CopyComplete
+C:\Users\User\source\repos\CodingTest\CodingTest\obj\Debug\netcoreapp3.1\CodingTest.dll
+C:\Users\User\source\repos\CodingTest\CodingTest\obj\Debug\netcoreapp3.1\CodingTest.pdb
+C:\Users\User\source\repos\CodingTest\CodingTest\obj\Debug\netcoreapp3.1\CodingTest.genruntimeconfig.cache
