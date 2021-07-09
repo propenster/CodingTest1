@@ -16,7 +16,7 @@ namespace CodingTest.Services
             this.fees = fees;
         }
         /// <summary>
-        /// This is the asynchronous version of CalculatedExpectedCharge
+        /// This is the asynchronous version of CalculatedExpectedCharge.
         /// Trust me this code looked differently before that's why it's Async.. It was very tightly coupled before... But when I couldn't test,
         /// I had to refactor... Now it looks better... So please it will still run Sync now because I've removed all the stuff that needed awaiting before now...
         /// </summary>

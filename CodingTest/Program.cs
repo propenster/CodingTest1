@@ -16,11 +16,11 @@ namespace CodingTest
             feeList = getFeeConfigFromJsonParsing(jsonFilePath);
             TransferChargeService service = new TransferChargeService(feeList);
 
+            #region Task 1 SOLUTION
             /**
              * Task 1 - Read Charge on Amount From Configuration File
              * 
              */
-            #region Task 1 SOLUTION
             double CalculatedCharge = 0;
             Console.Write("Please enter an amount to be transfered: ");
             double TransferAmount = Convert.ToDouble(Console.ReadLine());
@@ -33,7 +33,12 @@ namespace CodingTest
             Console.WriteLine($"The Charge on {TransferAmount} is NGN {CalculatedCharge}");
             #endregion
 
+
             #region Task 2 SOLUTION
+            /**
+             * Task 2 - Compute Surcharge on Amount and Display Breakdown
+             * 
+             */
             //Task 2
             Console.WriteLine("\n\nTask 2 - To Compute and Display Surcharge info");
             Console.WriteLine("Please enter an Amount to be transfered:...");

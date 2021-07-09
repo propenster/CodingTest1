@@ -254,8 +254,9 @@ namespace CodingTest.Test
         }
 
         [Theory]
-        [InlineData(50030)]
-        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_3(double Amount)
+        [InlineData(50030,49980)]
+        [InlineData(60000,59950)]
+        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_3(double Amount, double Expected)
         {
             //Arrange
 
@@ -263,12 +264,12 @@ namespace CodingTest.Test
             double result = _service.CalculateSurcharge(Amount);
 
             //Assert
-            Assert.Equal(49980, result);
+            Assert.Equal(Expected, result);
 
         }
         [Theory]
-        [InlineData(45000)]
-        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_2(double Amount)
+        [InlineData(45000,44975)]
+        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_2(double Amount, double Expected)
         {
             //Arrange
 
@@ -276,12 +277,12 @@ namespace CodingTest.Test
             double result = _service.CalculateSurcharge(Amount);
 
             //Assert
-            Assert.Equal(44975, result);
+            Assert.Equal(Expected, result);
 
         }
         [Theory]
-        [InlineData(5000)]
-        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_1(double Amount)
+        [InlineData(5000,4990)]
+        public void Test_CalculateSurcharge_Returns_Right_SurCharge_Tier_1(double Amount, double Expected)
         {
             //Arrange
 
@@ -289,7 +290,7 @@ namespace CodingTest.Test
             double result = _service.CalculateSurcharge(Amount);
 
             //Assert
-            Assert.Equal(4990, result);
+            Assert.Equal(Expected, result);
 
         }
 

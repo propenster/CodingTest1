@@ -9,8 +9,6 @@ namespace CodingTest.Services
     {
         Task<double> CalculatedExpectedChargeAsync(double TransferAmount);
         double CalculatedExpectedCharge(double TransferAmount);
-
-        //Surcharge methods could easily go here too...
         double CalculateSurcharge(double TransferAmount);
 
 
